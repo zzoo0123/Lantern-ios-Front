@@ -14,6 +14,7 @@
 		7D297B5829AF884900721916 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D297B5629AF884900721916 /* Main.storyboard */; };
 		7D297B5A29AF884A00721916 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D297B5929AF884A00721916 /* Assets.xcassets */; };
 		7D297B5D29AF884A00721916 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D297B5B29AF884A00721916 /* LaunchScreen.storyboard */; };
+		7DDB65F429C1F36C006002E7 /* lanternImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DDB65F329C1F36C006002E7 /* lanternImg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		7D297B5929AF884A00721916 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D297B5C29AF884A00721916 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D297B5E29AF884A00721916 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DDB65F329C1F36C006002E7 /* lanternImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lanternImg.png; sourceTree = "<group>"; };
 		B7D8667F3FDBFA68B44C10D6 /* Pods-Lantern.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lantern.debug.xcconfig"; path = "Target Support Files/Pods-Lantern/Pods-Lantern.debug.xcconfig"; sourceTree = "<group>"; };
 		CCF438C96926A0EFA320302C /* Pods-Lantern.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lantern.release.xcconfig"; path = "Target Support Files/Pods-Lantern/Pods-Lantern.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,15 +82,32 @@
 		7D297B4F29AF884900721916 /* Lantern */ = {
 			isa = PBXGroup;
 			children = (
+				7DDB65F229C1F351006002E7 /* assets */,
+				7DDB65F129C1AA51006002E7 /* ViewControllers */,
 				7D297B5029AF884900721916 /* AppDelegate.swift */,
 				7D297B5229AF884900721916 /* SceneDelegate.swift */,
-				7D297B5429AF884900721916 /* ViewController.swift */,
 				7D297B5629AF884900721916 /* Main.storyboard */,
 				7D297B5929AF884A00721916 /* Assets.xcassets */,
 				7D297B5B29AF884A00721916 /* LaunchScreen.storyboard */,
 				7D297B5E29AF884A00721916 /* Info.plist */,
 			);
 			path = Lantern;
+			sourceTree = "<group>";
+		};
+		7DDB65F129C1AA51006002E7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7D297B5429AF884900721916 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7DDB65F229C1F351006002E7 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				7DDB65F329C1F36C006002E7 /* lanternImg.png */,
+			);
+			path = assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +172,7 @@
 			files = (
 				7D297B5D29AF884A00721916 /* LaunchScreen.storyboard in Resources */,
 				7D297B5A29AF884A00721916 /* Assets.xcassets in Resources */,
+				7DDB65F429C1F36C006002E7 /* lanternImg.png in Resources */,
 				7D297B5829AF884900721916 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
