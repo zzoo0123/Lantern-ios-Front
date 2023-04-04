@@ -1,0 +1,35 @@
+PODS:
+  - Alamofire (5.6.4)
+  - KakaoSDKAuth (2.14.0):
+    - KakaoSDKCommon (= 2.14.0)
+  - KakaoSDKCommon (2.14.0):
+    - KakaoSDKCommon/Common (= 2.14.0)
+    - KakaoSDKCommon/Network (= 2.14.0)
+  - KakaoSDKCommon/Common (2.14.0)
+  - KakaoSDKCommon/Network (2.14.0):
+    - Alamofire (~> 5.1)
+    - KakaoSDKCommon/Common (= 2.14.0)
+  - KakaoSDKUser (2.14.0):
+    - KakaoSDKAuth (= 2.14.0)
+
+DEPENDENCIES:
+  - KakaoSDKAuth
+  - KakaoSDKCommon
+  - KakaoSDKUser
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - KakaoSDKAuth
+    - KakaoSDKCommon
+    - KakaoSDKUser
+
+SPEC CHECKSUMS:
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  KakaoSDKAuth: 8fca87815de22062a23297983f327613b087b8bb
+  KakaoSDKCommon: 0ce638f7a2e49704943c0b74a087a9f8067bba1c
+  KakaoSDKUser: 2ca18314ce72e6690f76cb1f6f9fbc771d31a803
+
+PODFILE CHECKSUM: 30ba60ad560be1e7a8801ab4867b816b42021a2d
+
+COCOAPODS: 1.11.3
