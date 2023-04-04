@@ -27,6 +27,7 @@
 		7D297B5929AF884A00721916 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D297B5C29AF884A00721916 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D297B5E29AF884A00721916 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DBB8F6129D328AE0089A570 /* Lantern.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lantern.entitlements; sourceTree = "<group>"; };
 		7DDB65F329C1F36C006002E7 /* lanternImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lanternImg.png; sourceTree = "<group>"; };
 		B7D8667F3FDBFA68B44C10D6 /* Pods-Lantern.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lantern.debug.xcconfig"; path = "Target Support Files/Pods-Lantern/Pods-Lantern.debug.xcconfig"; sourceTree = "<group>"; };
 		CCF438C96926A0EFA320302C /* Pods-Lantern.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lantern.release.xcconfig"; path = "Target Support Files/Pods-Lantern/Pods-Lantern.release.xcconfig"; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 		7D297B4F29AF884900721916 /* Lantern */ = {
 			isa = PBXGroup;
 			children = (
+				7DBB8F6129D328AE0089A570 /* Lantern.entitlements */,
 				7DDB65F229C1F351006002E7 /* assets */,
 				7DDB65F129C1AA51006002E7 /* ViewControllers */,
 				7D297B5029AF884900721916 /* AppDelegate.swift */,
@@ -374,6 +376,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Lantern/Lantern.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ASM49GKW7Z;
@@ -389,8 +393,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.0123suh.Lantern;
+				PRODUCT_BUNDLE_IDENTIFIER = com.teamCyan.lantern;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -403,6 +408,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Lantern/Lantern.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ASM49GKW7Z;
@@ -418,8 +425,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.0123suh.Lantern;
+				PRODUCT_BUNDLE_IDENTIFIER = com.teamCyan.lantern;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
