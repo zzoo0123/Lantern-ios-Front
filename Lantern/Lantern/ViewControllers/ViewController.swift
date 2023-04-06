@@ -13,50 +13,74 @@ import AuthenticationServices
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var startBtn: UIButton!
-    @IBOutlet weak var nextBtn1: UIButton!
-    @IBOutlet weak var nextBtn2: UIButton!
-    @IBOutlet weak var nextBtn3: UIButton!
-    @IBOutlet weak var nextBtn4: UIButton!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
     
+    
+    
     // button controll
     @IBAction func clickStartBtn(_ sender: UIButton) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "OnBoarding2") else {return}
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "scr_onb_call") else {return}
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true)
     }
     
     @IBAction func clickNextBtn1(_ sender: UIButton) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "OnBoarding3") else {return}
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "scr_onb_safe") else {return}
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true)
     }
     
     @IBAction func clickNextBtn2(_ sender: UIButton) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "OnBoarding4") else {return}
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "scr_onb_women") else {return}
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true)
     }
     
     @IBAction func clickNextBtn3(_ sender: UIButton) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "OnBoarding5") else {return}
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "scr_onb_access") else {return}
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true)
     }
     
     @IBAction func clickNextBtn4(_ sender: UIButton) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SocialLogin") else {return}
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "scr_onb_notice") else {return}
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true)
     }
-    
+
+    @IBAction func click_scr_signup_terms_main_btn(_ sender: UIButton) {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "scr_start_main") else {return}
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true)
+    }
+
+    @IBAction func click_scr_start_main_btn(_ sender: UIButton) {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "scr_start_profile") else {return}
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true)
+    }
+
+    @IBAction func click_scr_start_profile_btn(_ sender: UIButton) {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "scr_start_NOK") else {return}
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true)
+    }
+
+    @IBAction func click_scr_start_NOK_btn(_ sender: UIButton) {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "scr_start_name") else {return}
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true)
+    }
+
+    @IBAction func click_scr_start_name_btn(_ sender: UIButton) {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "scr_start_locpermit") else {return}
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true)
+    }
     
 //    func setupProviderLoginView() {
 //        let authorizationButton = ASAuthorizationAppleIDButton()
@@ -64,7 +88,7 @@ class ViewController: UIViewController {
 //            self.loginProviderStackView.addArrangedSubview(authorizationButton)
 //          }
 //    }
-//
+
 //
 ////    @objc
 //    func clickAppleLoginBtn() {
