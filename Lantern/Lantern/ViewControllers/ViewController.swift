@@ -13,13 +13,13 @@ import AuthenticationServices
 
 class ViewController: UIViewController {
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
     }
-    
-    
-    
     
     // button controll
     @IBAction func clickStartBtn(_ sender: UIButton) {
@@ -81,6 +81,29 @@ class ViewController: UIViewController {
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true)
     }
+    
+    
+    @IBAction func stopCallPopup(_ sender: UIButton) {
+        let alert = UIAlertController(title: "통화를 종료할까요?", message: "안내 상세 텍스트", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "cancel", style: .default, handler: nil)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(cancel)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+        
+    }
+
+    
+    // https://zeddios.tistory.com/111
+    @IBAction func clickPopup(_ sender: UIButton) {
+        let alert = UIAlertController(title: "유저를 신고할까요?", message: "안내 상세 텍스트", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "cancel", style: .default, handler: nil)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(cancel)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
     
 //    func setupProviderLoginView() {
 //        let authorizationButton = ASAuthorizationAppleIDButton()
