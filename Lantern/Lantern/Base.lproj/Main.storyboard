@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ql5-qM-eQA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SER-9d-9FR">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -617,7 +617,7 @@
         <!--View Controller-->
         <scene sceneID="cwT-5J-HuO">
             <objects>
-                <viewController storyboardIdentifier="scr_signup_main" id="4va-Xt-vHV" customClass="ViewController" customModule="Lantern" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="scr_signup_main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4va-Xt-vHV" customClass="ViewController" customModule="Lantern" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ods-6m-xoi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -650,82 +650,6 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="exU-33-5sh">
-                                <rect key="frame" x="24.666666666666657" y="628" width="326" height="108"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Il-A3-FIu">
-                                        <rect key="frame" x="0.0" y="0.0" width="326" height="49"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="49" id="Ies-50-ghT"/>
-                                            <constraint firstAttribute="width" constant="326" id="KE6-Za-kKX"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="카카오로">
-                                                    <attributes>
-                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                        <font key="NSFont" metaFont="system" size="16"/>
-                                                        <font key="NSOriginalFont" metaFont="system" size="16"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                                <fragment content=" 3">
-                                                    <attributes>
-                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                        <font key="NSFont" metaFont="system" size="16"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                                <fragment content="초만에">
-                                                    <attributes>
-                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                        <font key="NSFont" metaFont="system" size="16"/>
-                                                        <font key="NSOriginalFont" metaFont="system" size="16"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                                <fragment content=" ">
-                                                    <attributes>
-                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                        <font key="NSFont" metaFont="system" size="16"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                                <fragment content="시작하기">
-                                                    <attributes>
-                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                        <font key="NSFont" metaFont="system" size="16"/>
-                                                        <font key="NSOriginalFont" metaFont="system" size="16"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                            <color key="baseBackgroundColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        </buttonConfiguration>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncy-Oq-zY4">
-                                        <rect key="frame" x="0.0" y="59" width="326" height="49"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="326" id="ZVI-a9-qbO"/>
-                                            <constraint firstAttribute="height" constant="49" id="j9H-yT-ORN"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Apple로 계속하기">
-                                                    <attributes>
-                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <font key="NSFont" size="16" name="AppleSDGothicNeo-Regular"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                            <color key="baseBackgroundColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        </buttonConfiguration>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1dh-Nd-Jch">
                                 <rect key="frame" x="24.666666666666657" y="274" width="326" height="308"/>
                                 <constraints>
@@ -733,20 +657,49 @@
                                     <constraint firstAttribute="height" constant="308" id="nvP-ta-fu2"/>
                                 </constraints>
                             </imageView>
+                            <stackView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="loginStackView" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4hK-Na-p61">
+                                <rect key="frame" x="37.666666666666657" y="641" width="300" height="95"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5a-Vz-sdJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="B1g-WP-xX6"/>
+                                            <constraint firstAttribute="width" constant="300" id="aDk-dQ-Ek0"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="">
+                                            <backgroundConfiguration key="background" image="kakao_login_large_wide.png"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="kakaoLoginBtn:" destination="4va-Xt-vHV" eventType="touchUpInside" id="JRs-MH-ElG"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="exU-33-5sh">
+                                        <rect key="frame" x="0.0" y="50" width="300" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="CXK-tO-EPU"/>
+                                            <constraint firstAttribute="width" constant="300" id="YgK-vd-fNO"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7qn-Ed-gSC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="4hK-Na-p61" firstAttribute="centerX" secondItem="Ods-6m-xoi" secondAttribute="centerX" id="64k-SH-btG"/>
                             <constraint firstItem="Lg2-CK-AVy" firstAttribute="leading" secondItem="7qn-Ed-gSC" secondAttribute="leading" constant="32" id="98X-ZC-WTY"/>
                             <constraint firstItem="1dh-Nd-Jch" firstAttribute="centerX" secondItem="Ods-6m-xoi" secondAttribute="centerX" id="AdU-g9-71V"/>
+                            <constraint firstItem="7qn-Ed-gSC" firstAttribute="bottom" secondItem="4hK-Na-p61" secondAttribute="bottom" constant="42" id="MWA-O0-9FK"/>
                             <constraint firstItem="Lg2-CK-AVy" firstAttribute="top" secondItem="7qn-Ed-gSC" secondAttribute="top" constant="66" id="QWd-tg-NKq"/>
-                            <constraint firstItem="exU-33-5sh" firstAttribute="top" secondItem="1dh-Nd-Jch" secondAttribute="bottom" constant="46" id="UMs-53-2bN"/>
-                            <constraint firstItem="exU-33-5sh" firstAttribute="centerX" secondItem="Ods-6m-xoi" secondAttribute="centerX" id="qSZ-hp-B2D"/>
-                            <constraint firstItem="7qn-Ed-gSC" firstAttribute="bottom" secondItem="exU-33-5sh" secondAttribute="bottom" constant="42" id="rAR-lE-Yzk"/>
+                            <constraint firstItem="1dh-Nd-Jch" firstAttribute="top" secondItem="Lg2-CK-AVy" secondAttribute="bottom" constant="33.670000000000002" id="gek-Vo-CUv"/>
                             <constraint firstAttribute="trailing" secondItem="Lg2-CK-AVy" secondAttribute="trailing" constant="32" id="zNh-t4-Vbp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6W3-gf-flE"/>
+                    <connections>
+                        <outlet property="loginStackView" destination="exU-33-5sh" id="Ce5-11-qsM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZq-3d-sGf" sceneMemberID="firstResponder"/>
             </objects>
@@ -755,7 +708,7 @@
         <!--View Controller-->
         <scene sceneID="i2i-uG-KFg">
             <objects>
-                <viewController storyboardIdentifier="scr_signup_sex_unknown" id="UlV-uY-3j3" customClass="ViewController" customModule="Lantern" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="scr_signup_sex_unknown" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UlV-uY-3j3" customClass="ViewController" customModule="Lantern" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YrS-6T-zi2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2236,7 +2189,7 @@
         <!--View Controller-->
         <scene sceneID="Z7i-5H-cZr">
             <objects>
-                <viewController id="OEM-CI-tqK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="src_home_sos_main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OEM-CI-tqK" customClass="ViewController" customModule="Lantern" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q9h-Pv-E3f">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2281,12 +2234,14 @@
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="q7Z-Af-Pbx" appends="YES" id="cUj-Im-Wf8"/>
+                            <outletCollection property="gestureRecognizers" destination="jZD-uw-8qA" appends="YES" id="sIh-Kf-Ap6"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="jiZ-p7-MPX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iOr-tO-QZp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="q7Z-Af-Pbx"/>
+                <swipeGestureRecognizer direction="right" id="jZD-uw-8qA"/>
             </objects>
             <point key="canvasLocation" x="7096" y="1625"/>
         </scene>
@@ -2346,32 +2301,72 @@
         <!--View Controller-->
         <scene sceneID="MHM-3L-gLw">
             <objects>
-                <viewController id="SER-9d-9FR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="scr_safety_start" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SER-9d-9FR" customClass="ViewController" customModule="Lantern" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BlU-Y9-aVH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ro-WU-g5l">
-                                <rect key="frame" x="121" y="462" width="132" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="홈 화면.png" translatesAutoresizingMaskIntoConstraints="NO" id="yPI-7n-TpW">
+                                <rect key="frame" x="-7.6666666666666572" y="-16" width="390.33333333333326" height="844"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTD-jU-ADL">
+                                <rect key="frame" x="11" y="607" width="353" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="QQM-qf-h8A"/>
+                                    <constraint firstAttribute="width" constant="353" id="ZCd-bQ-udg"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="밤길메이트 찾기"/>
+                                <buttonConfiguration key="configuration" style="plain" image="통화버튼.png"/>
                             </button>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IM1-wv-dio">
-                                <rect key="frame" x="66" y="328" width="242" height="126"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEA-5n-8Q6">
+                                <rect key="frame" x="109" y="118" width="170" height="43"/>
+                                <string key="text">반가워요, OO님!
+랜턴에 오신걸 환영해요.</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4eB-JA-Voq">
+                                <rect key="frame" x="318" y="47" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="71Q-P3-akA"/>
+                                    <constraint firstAttribute="height" constant="44" id="e5V-4z-vLn"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="menu.png"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="홈 캐릭터.png" translatesAutoresizingMaskIntoConstraints="NO" id="I9X-8s-kNw">
+                                <rect key="frame" x="25" y="108" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="DdK-RO-Vnt"/>
+                                    <constraint firstAttribute="height" constant="64" id="Gjl-1Y-w6r"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2gF-0L-cwk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="4eB-JA-Voq" firstAttribute="top" secondItem="BlU-Y9-aVH" secondAttribute="top" constant="47" id="1TQ-UL-KqS"/>
+                            <constraint firstItem="I9X-8s-kNw" firstAttribute="top" secondItem="2gF-0L-cwk" secondAttribute="top" constant="58" id="2XD-Ib-AzB"/>
+                            <constraint firstItem="2gF-0L-cwk" firstAttribute="bottom" secondItem="DTD-jU-ADL" secondAttribute="bottom" constant="83" id="3lh-Al-6sm"/>
+                            <constraint firstItem="2gF-0L-cwk" firstAttribute="trailing" secondItem="4eB-JA-Voq" secondAttribute="trailing" constant="13" id="8wN-XY-77W"/>
+                            <constraint firstItem="yPI-7n-TpW" firstAttribute="centerY" secondItem="BlU-Y9-aVH" secondAttribute="centerY" id="FGO-Pi-30u"/>
+                            <constraint firstItem="yPI-7n-TpW" firstAttribute="centerX" secondItem="BlU-Y9-aVH" secondAttribute="centerX" id="Qhr-DP-KHy"/>
+                            <constraint firstItem="bEA-5n-8Q6" firstAttribute="leading" secondItem="2gF-0L-cwk" secondAttribute="leading" constant="109" id="TgE-oJ-OTT"/>
+                            <constraint firstItem="bEA-5n-8Q6" firstAttribute="top" secondItem="2gF-0L-cwk" secondAttribute="top" constant="68" id="eJD-kT-4mZ"/>
+                            <constraint firstItem="DTD-jU-ADL" firstAttribute="centerX" secondItem="BlU-Y9-aVH" secondAttribute="centerX" id="piU-nu-AC6"/>
+                            <constraint firstItem="I9X-8s-kNw" firstAttribute="leading" secondItem="2gF-0L-cwk" secondAttribute="leading" constant="25" id="zpe-Nq-pjm"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="4OZ-uG-Z34" appends="YES" id="C0w-BE-Cei"/>
+                            <outletCollection property="gestureRecognizers" destination="frH-b1-nSZ" appends="YES" id="Za0-46-RH7"/>
                         </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SA0-RG-Vzc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="4OZ-uG-Z34"/>
+                <swipeGestureRecognizer direction="right" id="frH-b1-nSZ"/>
             </objects>
             <point key="canvasLocation" x="5685.6000000000004" y="1624.8768472906404"/>
         </scene>
@@ -3695,6 +3690,8 @@
     <color key="tintColor" name="AccentColor"/>
     <resources>
         <image name="check_circle.png" width="152" height="152"/>
+        <image name="kakao_login_large_wide.png" width="600" height="90"/>
+        <image name="menu.png" width="45" height="44"/>
         <image name="warning.png" width="30" height="26"/>
         <image name="라디오버튼.png" width="24" height="24"/>
         <image name="버튼-스피커.png" width="60" height="60"/>
@@ -3711,6 +3708,9 @@
         <image name="인디케이터 바2.png" width="70" height="10"/>
         <image name="인디케이터 바3.png" width="70" height="10"/>
         <image name="인디케이터 바4.png" width="70" height="10"/>
+        <image name="통화버튼.png" width="329" height="90"/>
+        <image name="홈 캐릭터.png" width="64" height="64"/>
+        <image name="홈 화면.png" width="390" height="844"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -20,6 +20,11 @@
 		7D297B5829AF884900721916 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D297B5629AF884900721916 /* Main.storyboard */; };
 		7D297B5A29AF884A00721916 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D297B5929AF884A00721916 /* Assets.xcassets */; };
 		7D297B5D29AF884A00721916 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D297B5B29AF884A00721916 /* LaunchScreen.storyboard */; };
+		7D4534722A0256B8008BE4FC /* 홈 화면.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4534712A0256B8008BE4FC /* 홈 화면.png */; };
+		7D4534742A0256C7008BE4FC /* kakao_login_large_wide.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4534732A0256C7008BE4FC /* kakao_login_large_wide.png */; };
+		7D4534762A025A7D008BE4FC /* 통화버튼.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4534752A025A7D008BE4FC /* 통화버튼.png */; };
+		7D4534782A025BE9008BE4FC /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4534772A025BE9008BE4FC /* menu.png */; };
+		7D45347A2A025D42008BE4FC /* 홈 캐릭터.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4534792A025D42008BE4FC /* 홈 캐릭터.png */; };
 		7D63EE1129DE8E78005BCB83 /* 인디케이터 바1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D63EE1029DE8E78005BCB83 /* 인디케이터 바1.png */; };
 		7D63EE1529DE91BF005BCB83 /* 인디케이터 바4.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D63EE1229DE91BF005BCB83 /* 인디케이터 바4.png */; };
 		7D63EE1629DE91BF005BCB83 /* 인디케이터 바2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D63EE1329DE91BF005BCB83 /* 인디케이터 바2.png */; };
@@ -50,6 +55,11 @@
 		7D297B5929AF884A00721916 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D297B5C29AF884A00721916 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D297B5E29AF884A00721916 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D4534712A0256B8008BE4FC /* 홈 화면.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "홈 화면.png"; sourceTree = "<group>"; };
+		7D4534732A0256C7008BE4FC /* kakao_login_large_wide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kakao_login_large_wide.png; sourceTree = "<group>"; };
+		7D4534752A025A7D008BE4FC /* 통화버튼.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "통화버튼.png"; sourceTree = "<group>"; };
+		7D4534772A025BE9008BE4FC /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		7D4534792A025D42008BE4FC /* 홈 캐릭터.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "홈 캐릭터.png"; sourceTree = "<group>"; };
 		7D63EE1029DE8E78005BCB83 /* 인디케이터 바1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "인디케이터 바1.png"; sourceTree = "<group>"; };
 		7D63EE1229DE91BF005BCB83 /* 인디케이터 바4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "인디케이터 바4.png"; sourceTree = "<group>"; };
 		7D63EE1329DE91BF005BCB83 /* 인디케이터 바2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "인디케이터 바2.png"; sourceTree = "<group>"; };
@@ -141,6 +151,11 @@
 		7DDB65F229C1F351006002E7 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				7D4534772A025BE9008BE4FC /* menu.png */,
+				7D4534792A025D42008BE4FC /* 홈 캐릭터.png */,
+				7D4534752A025A7D008BE4FC /* 통화버튼.png */,
+				7D4534732A0256C7008BE4FC /* kakao_login_large_wide.png */,
+				7D4534712A0256B8008BE4FC /* 홈 화면.png */,
 				7D149F1B29E4F7DC00421A6D /* check_circle.png */,
 				7D149F1329E41C3000421A6D /* 아이콘-1.png */,
 				7D149F1229E41C3000421A6D /* 아이콘-2.png */,
@@ -229,12 +244,14 @@
 				7D149F1729E41C3000421A6D /* 아이콘-2.png in Resources */,
 				7D149F1929E41C3000421A6D /* 아이콘-4.png in Resources */,
 				7D149F1A29E41C3000421A6D /* 아이콘-3.png in Resources */,
+				7D45347A2A025D42008BE4FC /* 홈 캐릭터.png in Resources */,
 				7D86090529DEB281007A922D /* warning.png in Resources */,
 				7D63EE1129DE8E78005BCB83 /* 인디케이터 바1.png in Resources */,
 				7D63EE1629DE91BF005BCB83 /* 인디케이터 바2.png in Resources */,
 				7D297B5D29AF884A00721916 /* LaunchScreen.storyboard in Resources */,
 				7D297B5A29AF884A00721916 /* Assets.xcassets in Resources */,
 				7D63EE1529DE91BF005BCB83 /* 인디케이터 바4.png in Resources */,
+				7D4534722A0256B8008BE4FC /* 홈 화면.png in Resources */,
 				7D86090A29DEB3AD007A922D /* 버튼-음소거.png in Resources */,
 				7DDB65F429C1F36C006002E7 /* lanternImg.png in Resources */,
 				7D86090329DEAF10007A922D /* 상태메세지 입력칸.png in Resources */,
@@ -242,6 +259,9 @@
 				7D63EE1B29DE9785005BCB83 /* 라디오버튼.png in Resources */,
 				7D63EE1729DE91BF005BCB83 /* 인디케이터 바3.png in Resources */,
 				7D149F1029E419EF00421A6D /* 아이콘.png in Resources */,
+				7D4534762A025A7D008BE4FC /* 통화버튼.png in Resources */,
+				7D4534782A025BE9008BE4FC /* menu.png in Resources */,
+				7D4534742A0256C7008BE4FC /* kakao_login_large_wide.png in Resources */,
 				7D63EE1929DE96D2005BCB83 /* 아이콘_약관 전체동의.png in Resources */,
 				7D297B5829AF884900721916 /* Main.storyboard in Resources */,
 			);
@@ -374,7 +394,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -428,7 +448,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

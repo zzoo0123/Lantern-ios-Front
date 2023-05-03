@@ -13,12 +13,63 @@ import AuthenticationServices
 
 class ViewController: UIViewController {
     
-    
+    @IBOutlet weak var loginStackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setupProviderLoginView()
         
+        let leftSwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+            let rightSwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+                
+            leftSwipeGestureRecognizer.direction = .left
+            rightSwipeGestureRecognizer.direction = .right
+
+            view.addGestureRecognizer(leftSwipeGestureRecognizer)
+            view.addGestureRecognizer(rightSwipeGestureRecognizer)
+
+    }
+    
+    
+    @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
+        if (sender.direction == .left) {
+            NSLog("Swipe Left")
+        }
+            
+        if (sender.direction == .right) {
+            NSLog("Swipe Right")
+        }
+    }
+    // https://seungchan.tistory.com/entry/Swift-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%86%8C%EC%85%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8
+    @IBAction func kakaoLoginBtn(_ sender: UIButton) {
+        // 카카오톡 설치여부 확인
+        if (UserApi.isKakaoTalkLoginAvailable()) {
+            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("loginWithKakaoTalk() success.")
+
+                    //do something
+                    _ = oauthToken
+                }
+            }
+        }
+        
+        // 웹뷰로 로그인
+        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                print("loginWithKakaoAccount() success.")
+
+                //do something
+                let _ = oauthToken
+            }
+        }
     }
     
     // button controll
@@ -51,31 +102,31 @@ class ViewController: UIViewController {
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true)
     }
-
+    
     @IBAction func click_scr_signup_terms_main_btn(_ sender: UIButton) {
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "scr_start_main") else {return}
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true)
     }
-
+    
     @IBAction func click_scr_start_main_btn(_ sender: UIButton) {
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "scr_start_profile") else {return}
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true)
     }
-
+    
     @IBAction func click_scr_start_profile_btn(_ sender: UIButton) {
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "scr_start_NOK") else {return}
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true)
     }
-
+    
     @IBAction func click_scr_start_NOK_btn(_ sender: UIButton) {
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "scr_start_name") else {return}
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true)
     }
-
+    
     @IBAction func click_scr_start_name_btn(_ sender: UIButton) {
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "scr_start_locpermit") else {return}
         nextVC.modalPresentationStyle = .fullScreen
@@ -92,7 +143,7 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
         
     }
-
+    
     
     // https://zeddios.tistory.com/111
     @IBAction func clickPopup(_ sender: UIButton) {
@@ -104,75 +155,39 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    // https://nsios.tistory.com/40
+    // https://twih1203.medium.com/애플-로그인-구현하기-2-c5ce5ada2b1f
+    func setupProviderLoginView() {
+        let appleButton = ASAuthorizationAppleIDButton(type: .signIn, style: .black)
+        // addTarget으로 누를 때 실행할 동작 설정
+        appleButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
+        // addSubview로 애플 로그인 버튼 -> 미리 만든 loginStackView에 추가
+        self.loginStackView.addSubview(appleButton)
+        
+        appleButton.translatesAutoresizingMaskIntoConstraints = false
+        appleButton.leadingAnchor.constraint(equalTo: loginStackView.leadingAnchor).isActive = true
+        appleButton.trailingAnchor.constraint(equalTo: loginStackView.trailingAnchor).isActive = true
+        appleButton.topAnchor.constraint(equalTo: loginStackView.topAnchor).isActive = true
+        appleButton.bottomAnchor.constraint(equalTo: loginStackView.bottomAnchor).isActive = true
+    }
     
-//    func setupProviderLoginView() {
-//        let authorizationButton = ASAuthorizationAppleIDButton()
-//            authorizationButton.addTarget(self, action: #selector(clickAppleLoginBtn), for: .touchUpInside)
-//            self.loginProviderStackView.addArrangedSubview(authorizationButton)
-//          }
-//    }
-
-//
-////    @objc
-//    func clickAppleLoginBtn() {
-//        let appleIDProvider = ASAuthorizationAppleIDProvider()
-//        let request = appleIDProvider.createRequest()
-//        request.requestedScopes = [.fullName, .email]
-//
-//        let controller = ASAuthorizationController(authorizationRequests: [request])
-//        controller.delegate = self
-//        controller.presentationContextProvider = self as? ASAuthorizationControllerPresentationContextProviding
-//        controller.performRequests()
-//    }
-
-//
-//    // kakao 로그인 토큰 발행
-//    func kakaoLogin() {
-//        if (UserApi.isKakaoTalkLoginAvailable()) {
-//            // 카카오톡이 설치되어있는지 확인
-//            UserApi.shared.loginWithKakaoTalk{(oauthToken, error) in
-//                if let error = error {
-//                    print(error)
-//                } else {
-//                    print("login with KakaoTalk success")
-//                    // do something
-//                    _ = oauthToken
-//                }
-//            }
-//
-//            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-//                if let error = error {
-//                    print(error)
-//                } else {
-//                    print("loginWithKakaoTalk() success.")
-//                    //do something
-//                    _ = oauthToken
-//                }
-//            }
-//        }
+    // 버튼 누를 때 수행되는 핸들러
+    @objc func handleAuthorizationAppleIDButtonPress() {
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+        
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
+    }
+    
 }
 
-//extension ViewController: ASAuthorizationControllerDelegate {
-//    // 성공 후 동작
-//    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-//            if let credential = authorization.credential as? ASAuthorizationAppleIDCredential {
-//
-//                let idToken = credential.identityToken!
-//                let tokeStr = String(data: idToken, encoding: .utf8)
-//                print(tokeStr)
-//
-//                guard let code = credential.authorizationCode else { return }
-//                let codeStr = String(data: code, encoding: .utf8)
-//                print(codeStr)
-//
-//                let user = credential.user
-//                print(user)
-//
-//            }
-//        }
-//
-//    // 실패 후 동작
-//    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-//            print("error")
-//    }
-//}
+extension ViewController:
+    ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return self.view.window!
+    }
+}
