@@ -10,40 +10,116 @@ import KakaoSDKCommon
 import KakaoSDKAuth
 import KakaoSDKUser
 import AuthenticationServices
+import CoreLocation
 
 class ViewController: UIViewController {
+    let userNotificationCenter = UNUserNotificationCenter.current()
+    var locationManager:CLLocationManager!
     
     @IBOutlet weak var loginStackView: UIStackView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        setupProviderLoginView()
+//        setupProviderLoginView()
+        
+        userNotificationCenter.delegate = self
+        
+        requestNotificationAuthorization()
+        sendNotification(seconds: 10)
+        
+        locationManager.delegate = self
+        
         
         let leftSwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
-            let rightSwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        let rightSwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
                 
-            leftSwipeGestureRecognizer.direction = .left
-            rightSwipeGestureRecognizer.direction = .right
+        leftSwipeGestureRecognizer.direction = .left
+        rightSwipeGestureRecognizer.direction = .right
 
-            view.addGestureRecognizer(leftSwipeGestureRecognizer)
-            view.addGestureRecognizer(rightSwipeGestureRecognizer)
+        view.addGestureRecognizer(leftSwipeGestureRecognizer)
+        view.addGestureRecognizer(rightSwipeGestureRecognizer)
 
     }
     
+    // https://thoonk.tistory.com/15
+    // https://zeddios.tistory.com/157
+    // https://onelife2live.tistory.com/33
+    func requestNotificationAuthorization() {
+        let authOptions = UNAuthorizationOptions(arrayLiteral: .alert, .badge, .sound)
+
+        userNotificationCenter.requestAuthorization(options: authOptions) { success, error in
+            if let error = error {
+                print("Error: \(error)")
+            }
+        }
+    }
+    
+    func sendNotification(seconds: Double) {
+        let notificationContent = UNMutableNotificationContent()
+        
+        notificationContent.title = "랜턴 알림 테스트"
+        notificationContent.body = "알림 테스트 하는 중입니다"
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false)
+        let request = UNNotificationRequest(identifier: "testNotification", content: notificationContent, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("Notification Error: ", error)
+            }
+        }
+    }
+    
+    func checkUserDeviceLocationServiceAuthorization() {
+        
+        let authorizationStatus: CLAuthorizationStatus
+        
+        if #available(iOS 14.0, *) {
+            
+            authorizationStatus = locationManager.authorizationStatus
+        } else {
+            authorizationStatus = CLLocationManager.authorizationStatus()
+        }
+        
+        //iOS 위치 서비스 활성화 여부 체크
+        if CLLocationManager.locationServicesEnabled() {
+            checkUserCurrentLocationAuthorization(authorizationStatus)
+        } else {
+            print("위치서비스가 꺼져 있어서 위치 권한 요청을 못합니다.")
+        }
+        
+    }
+    
+    func checkUserCurrentLocationAuthorization(_ authorizationStatus: CLAuthorizationStatus) {
+            switch authorizationStatus {
+            case .notDetermined:
+                print("NOTDETERMINED")
+                
+                locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                locationManager.requestWhenInUseAuthorization()
+                
+            case .restricted, .denied:
+                print("DENIED, 아이폰 설정으로 유도")
+                
+            case .authorizedWhenInUse:
+                print("WHEN IN USE")
+                locationManager.startUpdatingLocation()
+            default: print("DEFAULT")
+            }
+        }
     
     @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
         if (sender.direction == .left) {
             NSLog("Swipe Left")
         }
-            
         if (sender.direction == .right) {
             NSLog("Swipe Right")
         }
     }
     // https://seungchan.tistory.com/entry/Swift-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%86%8C%EC%85%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8
+    // https://gyuios.tistory.com/81
     @IBAction func kakaoLoginBtn(_ sender: UIButton) {
-        // 카카오톡 설치여부 확인
+        // 카카오톡으로 로그인
         if (UserApi.isKakaoTalkLoginAvailable()) {
             UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
                 if let error = error {
@@ -51,54 +127,38 @@ class ViewController: UIViewController {
                 }
                 else {
                     print("loginWithKakaoTalk() success.")
-
+                    
+                    guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "scr_signup_terms_main") else {return}
+                    nextVC.modalPresentationStyle = .fullScreen
+                    self.present(nextVC, animated: true)
                     //do something
                     _ = oauthToken
                 }
             }
         }
         
-        // 웹뷰로 로그인
+        // 카카오계정으로 로그인
         UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
             if let error = error {
                 print(error)
             }
             else {
                 print("loginWithKakaoAccount() success.")
-
+                
                 //do something
-                let _ = oauthToken
+                _ = oauthToken
             }
         }
+    }
+    
+    @IBAction func notificationBtn(_ sender: UIButton) {
+//        requestNotificationPermission()
+//        registerForPushNotifications()
     }
     
     // button controll
     @IBAction func clickStartBtn(_ sender: UIButton) {
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "scr_onb_call") else {return}
-        nextVC.modalPresentationStyle = .fullScreen
-        self.present(nextVC, animated: true)
-    }
-    
-    @IBAction func clickNextBtn1(_ sender: UIButton) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "scr_onb_safe") else {return}
-        nextVC.modalPresentationStyle = .fullScreen
-        self.present(nextVC, animated: true)
-    }
-    
-    @IBAction func clickNextBtn2(_ sender: UIButton) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "scr_onb_women") else {return}
-        nextVC.modalPresentationStyle = .fullScreen
-        self.present(nextVC, animated: true)
-    }
-    
-    @IBAction func clickNextBtn3(_ sender: UIButton) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "scr_onb_access") else {return}
-        nextVC.modalPresentationStyle = .fullScreen
-        self.present(nextVC, animated: true)
-    }
-    
-    @IBAction func clickNextBtn4(_ sender: UIButton) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "scr_onb_notice") else {return}
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true)
     }
@@ -141,7 +201,6 @@ class ViewController: UIViewController {
         alert.addAction(cancel)
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
-        
     }
     
     
@@ -182,7 +241,6 @@ class ViewController: UIViewController {
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
     }
-    
 }
 
 extension ViewController:
@@ -191,3 +249,36 @@ extension ViewController:
         return self.view.window!
     }
 }
+
+extension ViewController: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([. alert, .badge, .sound])
+    }
+}
+
+// https://callmedaniel.tistory.com/m/62
+extension ViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("사용자의 위치를 성공적으로 가져왔습니다.")
+        print(locations)
+        
+        locationManager.stopUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("사용자의 위치를 가져오지 못했습니다.")
+        print(error)
+    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        print("사용자가 권한 상태를 바꿨습니다.")
+        checkUserDeviceLocationServiceAuthorization()
+    }
+}
+
+
+

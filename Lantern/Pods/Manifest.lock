@@ -11,11 +11,16 @@ PODS:
     - KakaoSDKCommon/Common (= 2.14.0)
   - KakaoSDKUser (2.14.0):
     - KakaoSDKAuth (= 2.14.0)
+  - SendBirdCalls (1.10.9):
+    - SendBirdWebRTC (~> 1.7.0)
+  - SendBirdWebRTC (1.7.0)
 
 DEPENDENCIES:
+  - Alamofire
   - KakaoSDKAuth
   - KakaoSDKCommon
   - KakaoSDKUser
+  - SendBirdCalls
 
 SPEC REPOS:
   trunk:
@@ -23,13 +28,17 @@ SPEC REPOS:
     - KakaoSDKAuth
     - KakaoSDKCommon
     - KakaoSDKUser
+    - SendBirdCalls
+    - SendBirdWebRTC
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   KakaoSDKAuth: 8fca87815de22062a23297983f327613b087b8bb
   KakaoSDKCommon: 0ce638f7a2e49704943c0b74a087a9f8067bba1c
   KakaoSDKUser: 2ca18314ce72e6690f76cb1f6f9fbc771d31a803
+  SendBirdCalls: cf539a5d58b4dbdb9c1eaf84f54451269a1d1c8a
+  SendBirdWebRTC: e744ce54ca9108bed13c3f03c301ecf48edaaf80
 
-PODFILE CHECKSUM: 05d8bfcabc2cf566c54fd58ee95796759eff6b8a
+PODFILE CHECKSUM: 64249b4922fa1806e1a922a1b650a97bf2f9f21b
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.1
